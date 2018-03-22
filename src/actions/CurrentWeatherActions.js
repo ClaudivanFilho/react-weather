@@ -20,17 +20,20 @@ export function fetch(city, lat, lon) {
     return apolloFetch({
       query: query,
     }).then(res => {
+      console.log('fetched ok')
       dispatch({type: END_FETCH_CURRENT_WEATHER, payload: res.data});
+      return res.data;
     }, err => {
-      dispatch({type: END_FETCH_CURRENT_WEATHER, payload: res.data});
-      dispatch({type: REQUEST_ERROR, payload: error});
+      dispatch({type: END_FETCH_CURRENT_WEATHER});
+      dispatch({type: REQUEST_ERROR, payload: err});
+      return err.errors;
     });
   }
 }
 
 export function error(error) {
   return dispatch => {
-    dispatch({type: END_FETCH_CURRENT_WEATHER, payload: {}});
+    dispatch({type: END_FETCH_CURRENT_WEATHER});
     dispatch({type: REQUEST_ERROR, payload: error});
   }
 }

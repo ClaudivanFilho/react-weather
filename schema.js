@@ -92,11 +92,13 @@ module.exports = new GraphQLSchema({
         resolve: (root, args) => fetch(getWeatherUrl(args)).then(response => response.text())
         .then((response) => {
           let json = JSON.parse(response);
+          console.log(response)
           if (json.cod != 200) {
             throw new Error(json.message);
           }
           return json
         }, (err) => {
+          console.log(err)
           throw new Error('Error on request.');
         })
       }

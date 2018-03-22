@@ -58,6 +58,11 @@ module.exports = {
         test: /\.scss$/,
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src/components')
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file-loader',
+        include: path.join(__dirname, 'src/images')
       }
     ]
   }

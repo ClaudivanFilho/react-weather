@@ -12,7 +12,7 @@ export function getCurrentWeatherQuery(args) {
   }
   return `{ 
     weather(${result}) { 
-      lat, lon, temp, main, name, country 
+      lat, lon, temp, main, name, country, sunrise, sunset
     } 
   }`
 }

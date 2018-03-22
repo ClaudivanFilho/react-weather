@@ -6,20 +6,20 @@ import {
 
 var initialState = {
   loading: false,
-  weather: {}
+  weather: null
 };
 
 export default function currentWeather(state = initialState, action) {
   switch (action.type) {
     case START_FETCH_CURRENT_WEATHER:
-      return Object.assign(state, {
+      return Object.assign({}, state, {
         loading: true,
         weather: {}
       });
     case END_FETCH_CURRENT_WEATHER:
-      return Object.assign(state, {
+      return Object.assign({}, state, {
         loading: false,
-        weather: action.payload
+        weather: action.payload ? action.payload.weather : null
       });
     default:
       return state;
