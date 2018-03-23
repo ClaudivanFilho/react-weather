@@ -14,7 +14,7 @@ export default function currentWeather(state = initialState, action) {
     case START_FETCH_CURRENT_WEATHER:
       return Object.assign({}, state, {
         loading: true,
-        weather: {}
+        weather: null
       });
     case END_FETCH_CURRENT_WEATHER:
       return Object.assign({}, state, {

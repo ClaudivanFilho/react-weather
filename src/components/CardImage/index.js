@@ -26,12 +26,14 @@ export default class CardImage extends Component {
       <div style={{textAlign: "center"}}>
         <h2>{this.props.title}</h2>
         <div className="col-sm-12">
-          <img src={this.getIcon()} width={100}/>
+          <img src={this.getIcon()} width={200}/>
         </div>
         <div className="col-sm-12">
-          <Moment unix format="HH:mm:ss A">
-            {this.props.date}
-          </Moment>
+          <h5>
+            <Moment unix format="HH:mm:ss A">
+              {this.props.date}
+            </Moment>
+          </h5>
         </div>
       </div>
     );

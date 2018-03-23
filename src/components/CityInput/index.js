@@ -13,7 +13,7 @@ class CityInput extends Component {
   
   constructor(props) {
     super(props);
-    this.delayedOnChangeCity = _.debounce(event => this.fetchByCity(event.target.value), 2000);
+    this.delayedOnChangeCity = _.debounce(event => this.fetchByCity(event.target.value), 1000);
   }
 
   fetchByCity(cityName) {
@@ -27,12 +27,13 @@ class CityInput extends Component {
   
   render() {
     return (
-      <div className="inline fields col-sm-12 text-center">
-        <label className="col-sm-6">Pick up one location or type a city: </label>
-        <input className="col-sm-4" type="text" onChange={(e) => {
-          this.onChangeCity(e);
-        }}/>
-        <button className="ui primary button"> Search </button>
+      <div className="ui form text-right">
+        <div className="inline fields float-right">
+          <label> Move the marker to a location or type a city:  </label>
+          <input className="col-sm-4" type="text" onChange={(e) => {
+            this.onChangeCity(e);
+          }}/>
+        </div>
       </div>
     );
   }
