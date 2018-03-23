@@ -5,15 +5,13 @@ import * as CurrentWeatherActions from '../../actions/CurrentWeatherActions'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import CityInput from '../CityInput'
-import CardImage from '../CardImage'
+import SuperiorMenu from '../SuperiorMenu'
+import SuperiorHeader from '../SuperiorHeader'
+import WeatherInfo from '../WeatherInfo'
+import Loading from '../Loading'
+import GoogleMaps from '../GoogleMaps'
 
-import TransitionGroup from 'react-transition-group/TransitionGroup';
 import { CSSTransitionGroup } from 'react-transition-group'
-
-import LoadingIcon from '../../images/sun_loader.gif'
-
-import Map from '../Map'
 
 import './index.scss'
 
@@ -58,67 +56,30 @@ class App extends Component {
   
   render() {
     const { weather, loading } = this.props.currentWeather;
+    const { position, zoom } = this.state;
     return (
       <div>
-      <div className="ui fixed menu">
-        <a className="active item">
-          Home
-        </a>
-        <a className="item">
-          Historic
-        </a>
-        <a className="item">
-          Forecast
-        </a>
-      </div>
+        <SuperiorMenu />
 
-      <div className="container"  style={{marginTop: "50px"}}>
-        <div className="col-sm-12 app-pickup-form">
-          {
-            weather && 
-            <h2 className="float-left" style={{marginTop: "10px"}}>
-              {weather.name + ', ' + weather.country}
-            </h2>
-          }
-          <CityInput/>
+        <div className="container"  style={{marginTop: "50px"}}>
+          
+          <SuperiorHeader weather={weather} />
+
+          <div className="col-sm-12 float-left">
+            <GoogleMaps fetchWeather={(lat, lng) => this.fetchWeather(lat, lng)} zoom={zoom} position={position}/>
+          </div>
+
+          <div className="ui clearing divider"></div>
+
+          <CSSTransitionGroup transitionName="loading" transitionEnterTimeout={300} transitionLeaveTimeout={30}>
+            <Loading active={loading} />
+          </CSSTransitionGroup>
+
+          <CSSTransitionGroup transitionName="card" transitionEnterTimeout={500} transitionLeaveTimeout={200}>
+            <WeatherInfo weather={weather} />
+          </CSSTransitionGroup>
+
         </div>
-        <div className="col-sm-12 float-left">
-          <Map fetchWeather={(lat, lng) => this.fetchWeather(lat, lng)} 
-            zoom={this.state.zoom}
-            position={this.state.position}/>
-        </div>
-        <div className="ui clearing divider"></div>
-        <CSSTransitionGroup
-          transitionName="loading"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={30}>
-          {
-            loading &&
-            <div className="col-sm-12 loading" style={{textAlign: "center"}}>
-            <img src={LoadingIcon} width={100}/>
-            </div>
-          }
-        </CSSTransitionGroup>
-        <CSSTransitionGroup
-        transitionName="card"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={200}>
-        {
-          weather && 
-            <div>
-              <div className="ui horizontal divider">
-                Current Weather Info
-              </div>
-              <div className="col-sm-6 float-left">
-                <CardImage date={weather.sunrise} title="Sunrise" image="sunrise"/>
-              </div>
-              <div className="col-sm-6 float-left">
-                <CardImage date={weather.sunset} title="Sunset" image="sunset"/>
-              </div>
-            </div>
-          }
-        </CSSTransitionGroup>
-      </div>
       </div>
     );
   }

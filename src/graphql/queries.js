@@ -12,7 +12,7 @@ export function getCurrentWeatherQuery(args) {
   }
   return `{ 
     weather(${result}) { 
-      lat, lon, temp, main, name, country, sunrise, sunset
+      lat, lon, temp, temp_min, temp_max, main, description, name, country, sunrise, sunset, humidity, icon, rain, wind
     } 
   }`
 }

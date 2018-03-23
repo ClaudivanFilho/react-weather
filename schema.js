@@ -61,6 +61,26 @@ const WeatherType = new GraphQLObjectType({
     sunset: {
       type: GraphQLString,
       resolve: json => json.sys.sunset
+    },
+    pressure: {
+      type: GraphQLInt,
+      resolve: json => json.main.pressure
+    },
+    icon: {
+      type: GraphQLString,
+      resolve: json => json.weather[0].icon
+    },
+    rain: {
+      type: GraphQLFloat,
+      resolve: json => json.rain['3h']
+    },
+    clouds: {
+      type: GraphQLFloat,
+      resolve: json => json.clouds.all
+    },
+    wind: {
+      type: GraphQLFloat,
+      resolve: json => json.wind.speed
     }
   })
 })

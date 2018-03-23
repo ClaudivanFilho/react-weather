@@ -1,25 +1,3 @@
-body {
-  // background: #f7fdff; /* Old browsers */
-  // background: -moz-linear-gradient(top, #f7fdff 0%, #e8f6f9 100%); /* FF3.6-15 */
-  // background: -webkit-linear-gradient(top, #f7fdff 0%,#e8f6f9 100%); /* Chrome10-25,Safari5.1-6 */
-  // background: linear-gradient(to bottom, #f7fdff 0%,#e8f6f9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fdff', endColorstr='#e8f6f9',GradientType=0 );
-}
-
-.app-pickup-form {
-  margin-top: 20px !important;
-}
-
-.teste, .teste div {
-
-}
-
-.loading {
-  position: absolute;
-  left: 0%;
-  top: 70%;
-}
-
 // ========= Card Transition CSS =======
 .card-enter {
   opacity: 0.01;
@@ -39,23 +17,3 @@ body {
   transition: opacity 200ms ease-in;
 }
 // ======== End Card Transition ========
-
-// ======== Loading Transition CSS =====
-.loading-enter {
-  opacity: 0.01;
-}
-
-.loading-enter.loading-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ;
-}
-
-.loading-leave {
-  opacity: 1;
-}
-
-.loading-leave.loading-leave-active {
-  opacity: 0.01;
-  transition: opacity 20ms ease-out;
-}
-// ======= End Loading Transition ======
