@@ -14,6 +14,7 @@ class CityInput extends Component {
   
   constructor(props) {
     super(props);
+    // this code does a delay in the input onChange event before fire an event.
     this.delayedOnChangeCity = _.debounce(event => this.fetchByCity(event.target.value), 1000);
   }
 

@@ -13,7 +13,7 @@ export default class Loading extends Component {
   render() {
     return (
       this.props.active &&
-      <div className="col-sm-12 loading" style={{textAlign: "center"}}>
+      <div className="col-sm-12 text-center loading">
         <img src={LoadingIcon} width={100}/>
       </div>
     );

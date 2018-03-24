@@ -14,7 +14,7 @@ export default class PredictionCard extends Component {
             {date}
           </Moment>
         </h5>
-        <div className="col-sm-12" style={{display: "flex", justifyContent: "center"}}>
+        <div className="div-image col-sm-12">
           { icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} width={imageWidth || 50}/> }
         </div>
         <div className="col-sm-12">

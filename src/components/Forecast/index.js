@@ -8,7 +8,7 @@ import Slider from 'react-slick'
 
 import './index.scss';
 
-const settings = {
+const sliderSettings = {
   dots: true,
   infinite: false,
   speed: 500,
@@ -45,10 +45,10 @@ class Forecast extends Component {
             <div className="col-sm-12 ui horizontal divider">
               Forecast
             </div>
-            <Slider {...settings}>
+            <Slider {...sliderSettings}>
               {forecast.list.map((prediction) => {
                 return (
-                  <div className="div-prediction float-left" key={prediction.date}>
+                  <div key={prediction.date}>
                     <PredictionCard prediction={prediction} />
                   </div>
                 )

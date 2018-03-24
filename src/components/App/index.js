@@ -80,10 +80,8 @@ class App extends Component {
               <Loading active={loading}/>
             </CSSTransitionGroup>
 
-            <CSSTransitionGroup transitionName="card" transitionEnterTimeout={500} transitionLeaveTimeout={200}>
-              <Route exact path="/" component={WeatherInfo}/>
-              <Route path="/forecast" component={Forecast}/>
-            </CSSTransitionGroup>
+            <Route exact path="/" component={WeatherInfo}/>
+            <Route path="/forecast" component={Forecast}/>
             
           </div>
         </div>

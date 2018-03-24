@@ -30,9 +30,7 @@ class WeatherInfo extends Component {
               <strong>Temperature: </strong> {weather.temp}° <br/>
               <strong>Temperature Min: </strong> {weather.temp_min}°<br/>
               <strong>Temperature Max: </strong> {weather.temp_max}°<br/>
-              <img className="details-image" style={{position: "absolute", right: "40px", top: "10px"}} 
-                src={`http://openweathermap.org/img/w/${weather.icon}.png`} width="70"/>
-              
+              <img className="details-image" src={`http://openweathermap.org/img/w/${weather.icon}.png`} width="70"/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3 col-xl-2 float-left">
             <CardImage width={50} title="Wind" image={iconWind} color="blue">
