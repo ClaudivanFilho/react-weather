@@ -6,7 +6,6 @@ import Moment from 'react-moment';
 
 import iconSunset from '../../images/sunset.svg'
 import iconSunrise from '../../images/sunrise.svg'
-import iconSun from '../../images/if_Sunny_47314(1).png'
 import iconWind from '../../images/if_Wind_Flag_Storm_47317.png'
 import { CSSTransitionGroup } from 'react-transition-group'
 
