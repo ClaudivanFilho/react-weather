@@ -34,7 +34,7 @@ module.exports = {
      * See description in 'webpack.config.dev' for more info.
      */
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     /**
      * Some of you might recognize this! It minimizes all your JS output of chunks.
@@ -57,6 +57,11 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass'
+      },
+      {
+        test: /\.(jpg|png|svg|gif)$/,
+        loader: 'file-loader',
+        include: path.join(__dirname, 'src/images')
       }
     ]
   }
