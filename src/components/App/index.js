@@ -67,10 +67,10 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <SuperiorMenu/>
-
+          
           <div className="container"  style={{marginTop: "50px"}}>
-            
-            <SuperiorHeader weather={weather}></SuperiorHeader>
+          
+          <SuperiorHeader weather={weather}></SuperiorHeader>
 
             <div className="col-sm-12 float-left">
               <GoogleMaps fetchWeather={(lat, lng) => this.fetchWeather(lat, lng)} zoom={zoom} position={position}/>

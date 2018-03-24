@@ -10,11 +10,11 @@ export default class PredictionCard extends Component {
     return (
       <div className={`prediction-card`}>
         <h5>
-          <Moment unix format="ddd/MMM HH:mm">
+          <Moment unix format="DD/MMM HH:mm">
             {date}
           </Moment>
         </h5>
-        <div className="col-sm-12">
+        <div className="col-sm-12" style={{display: "flex", justifyContent: "center"}}>
           { icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} width={imageWidth || 50}/> }
         </div>
         <div className="col-sm-12">

@@ -17,14 +17,14 @@ export default class SuperiorMenu extends Component {
     return (
       <div className="ui fixed menu">
         <Link to="/">
-          <a className={`${!this.isForecastRoute() ? 'active' : ''} item`}>
+          <div className={`${!this.isForecastRoute() ? 'active' : ''} item`}>
             Current Weather
-          </a>
+          </div>
         </Link>
         <Link to="/forecast">
-        <a className={`${this.isForecastRoute() ? 'active' : ''} item`}>
+          <div className={`${this.isForecastRoute() ? 'active' : ''} item`}>
             Forecast
-          </a>
+          </div>
         </Link>
       </div>
     );
