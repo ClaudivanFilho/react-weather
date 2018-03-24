@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux'
 
 import { CSSTransitionGroup } from 'react-transition-group'
-import CardImage from '../CardImage'
+import PredictionCard from '../PredictionCard'
 
 import './index.scss';
 
@@ -14,16 +14,14 @@ class Forecast extends Component {
       <CSSTransitionGroup transitionName="card" transitionEnterTimeout={500} transitionLeaveTimeout={200}>
         { forecast &&  
           <div className="col-sm-12 float-left">
-            <div className="col-sm-12 ui horizontal divider"  style={{paddingTop: '10px'}}>
+            <div className="col-sm-12 ui horizontal divider">
               Forecast
             </div>
             {
               forecast.list.map((prediction) => {
                 return (
-                  <div className="col-sm-3 float-left" key={prediction.date}>
-                    <CardImage title={prediction.date} color="blue">
-                      {prediction.info}
-                    </CardImage>
+                  <div className="div-prediction float-left" key={prediction.date}>
+                    <PredictionCard prediction={prediction} />
                   </div>
                 )
               })

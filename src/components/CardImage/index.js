@@ -3,10 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import './index.scss';
 
 export default class CardImage extends Component {
-  
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const {title, image, width, children, color} = this.props; 

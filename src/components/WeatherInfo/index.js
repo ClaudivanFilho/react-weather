@@ -21,7 +21,7 @@ class WeatherInfo extends Component {
         {
           weather && 
           <div className="col-sm-12 float-left">
-            <div className="col-sm-12 ui horizontal divider"  style={{paddingTop: '15px'}}>
+            <div className="col-sm-12 ui horizontal divider">
               Current Weather Info
             </div>
             <div className="ui raised segment col-sm-12 col-md-6 col-lg-3 col-xl-4 float-left" style={{margin: "0px"}}>
@@ -30,7 +30,7 @@ class WeatherInfo extends Component {
               <strong>Temperature: </strong> {weather.temp}° <br/>
               <strong>Temperature Min: </strong> {weather.temp_min}°<br/>
               <strong>Temperature Max: </strong> {weather.temp_max}°<br/>
-              <img style={{position: "absolute", right: "40px", top: "10px"}} 
+              <img className="details-image" style={{position: "absolute", right: "40px", top: "10px"}} 
                 src={`http://openweathermap.org/img/w/${weather.icon}.png`} width="70"/>
               
             </div>

@@ -14,7 +14,6 @@ export default class SuperiorMenu extends Component {
   }
   
   render() {
-    console.log(window.location.href)
     return (
       <div className="ui fixed menu">
         <Link to="/">

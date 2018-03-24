@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom'
 
 import * as CurrentWeatherActions from '../../actions/CurrentWeatherActions';
+import * as ForecastActions from '../../actions/ForecastActions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -18,6 +19,7 @@ class CityInput extends Component {
 
   fetchByCity(cityName) {
     this.props.fetchCurrentWeather(cityName).then();
+    this.props.fetchForecast(cityName).then();
   }
   
   onChangeCity(event) {
@@ -45,7 +47,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCurrentWeather: cityName => dispatch(CurrentWeatherActions.fetch(cityName))
+    fetchCurrentWeather: cityName => dispatch(CurrentWeatherActions.fetch(cityName)),
+    fetchForecast: cityName => dispatch(ForecastActions.fetch(cityName))
   };
 };
 
