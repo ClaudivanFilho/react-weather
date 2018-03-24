@@ -8,8 +8,70 @@ const {
   GraphQLObjectType,
   GraphQLFloat,
   GraphQLString,
-  GraphQLInt
+  GraphQLInt,
+  GraphQLList
 } = require('graphql')
+
+const DayType = new GraphQLObjectType({
+  name: 'DayType',
+  description: '...',
+  fields: () => ({
+    info: { 
+      type: GraphQLString,
+      resolve: json => json.weather[0].main 
+    },
+    description: { 
+      type: GraphQLString,
+      resolve: json => json.weather[0].description 
+    },
+    icon: {
+      type: GraphQLString,
+      resolve: json => json.weather[0].icon
+    },
+    temp: {
+      type: GraphQLFloat,
+      resolve: json => json.main.temp
+    },
+    temp_max: {
+      type: GraphQLFloat,
+      resolve: json => json.main.temp_max
+    },
+    temp_min: {
+      type: GraphQLFloat,
+      resolve: json => json.main.temp_min
+    },
+    date: {
+      type: GraphQLString,
+      resolve: json => json.dt
+    }
+  })
+});
+
+const ForecastType = new GraphQLObjectType({
+  name: 'Forecast',
+  description: '...',
+  fields: () => ({
+    lat: { 
+      type: GraphQLFloat,
+      resolve: json => json.city.coord.lat 
+    },
+    lon: { 
+      type: GraphQLFloat,
+      resolve: json => json.city.coord.lon
+    },
+    name: {
+      type: GraphQLString,
+      resolve: json => json.city.name
+    },
+    country: {
+      type: GraphQLString,
+      resolve: json => json.city.country
+    },
+    list: {
+      type: GraphQLList(DayType)
+    }
+  })
+});
 
 const WeatherType = new GraphQLObjectType({
   name: 'Weather',
@@ -70,10 +132,6 @@ const WeatherType = new GraphQLObjectType({
       type: GraphQLString,
       resolve: json => json.weather[0].icon
     },
-    rain: {
-      type: GraphQLFloat,
-      resolve: json => json.rain['3h']
-    },
     clouds: {
       type: GraphQLFloat,
       resolve: json => json.clouds.all
@@ -85,8 +143,8 @@ const WeatherType = new GraphQLObjectType({
   })
 })
 
-function getWeatherUrl(args) {
-  var url = OPEN_WEATHER_API_URL + 'weather?';
+function getWeatherUrl(args, mainField) {
+  var url = OPEN_WEATHER_API_URL + `${mainField}?`;
   for (key in args) {
     var keyName = (key == 'city' ? 'q' : key);
     url +=  `${keyName}=${args[key]}&`
@@ -94,6 +152,21 @@ function getWeatherUrl(args) {
   url += `appid=${OPEN_WEATHER_API_KEY}`;
   console.log(url);
   return url
+}
+
+function resolve(root, args, mainField) {
+  return fetch(getWeatherUrl(args, mainField)).then(response => response.text())
+  .then((response) => {
+    let json = JSON.parse(response);
+    // console.log(response)
+    if (json.cod != 200) {
+      throw new Error(json.message);
+    }
+    return json
+  }, (err) => {
+    console.log(err)
+    throw new Error('Error on request.');
+  })
 }
 
 module.exports = new GraphQLSchema({
@@ -109,18 +182,17 @@ module.exports = new GraphQLSchema({
           lat: { type: GraphQLFloat },
           lon: { type: GraphQLFloat }
         },
-        resolve: (root, args) => fetch(getWeatherUrl(args)).then(response => response.text())
-        .then((response) => {
-          let json = JSON.parse(response);
-          console.log(response)
-          if (json.cod != 200) {
-            throw new Error(json.message);
-          }
-          return json
-        }, (err) => {
-          console.log(err)
-          throw new Error('Error on request.');
-        })
+        resolve: (root, args) => resolve(root, args, 'weather') 
+      },
+      forecast: {
+        type: ForecastType,
+        args: {
+          city: { type: GraphQLString },
+          units: { type: GraphQLString },
+          lat: { type: GraphQLFloat },
+          lon: { type: GraphQLFloat }
+        },
+        resolve: (root, args) => resolve(root, args, 'forecast')
       }
       
     })

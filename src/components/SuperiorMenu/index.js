@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router-dom'
 
 import './index.scss';
 
@@ -8,18 +9,24 @@ export default class SuperiorMenu extends Component {
     super(props);
   }
 
+  isForecastRoute() {
+    return window.location.href.indexOf('/forecast') != -1;
+  }
+  
   render() {
+    console.log(window.location.href)
     return (
       <div className="ui fixed menu">
-        <a className="active item">
-          Home
-        </a>
-        <a className="item">
-          Historic
-        </a>
-        <a className="item">
-          Forecast
-        </a>
+        <Link to="/">
+          <a className={`${!this.isForecastRoute() ? 'active' : ''} item`}>
+            Current Weather
+          </a>
+        </Link>
+        <Link to="/forecast">
+        <a className={`${this.isForecastRoute() ? 'active' : ''} item`}>
+            Forecast
+          </a>
+        </Link>
       </div>
     );
   }

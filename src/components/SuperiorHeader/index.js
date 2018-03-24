@@ -13,7 +13,7 @@ export default class SuperiorHeader extends Component {
   render() {
     return (
       <div className="col-sm-12 app-pickup-form">
-        { this.props.weather && 
+        { this.props.weather && this.props.weather.country &&
           <h2 className="float-left" style={{marginTop: "10px"}}>
             {this.props.weather.name + ', ' + this.props.weather.country}
           </h2> 

@@ -21,6 +21,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f9fe', endColorstr='#d6f0fd',GradientType=0 );
 }
 
+.bg-yellow {
+  background: #fefcea; /* Old browsers */
+  background: -moz-linear-gradient(top, #fefcea 0%, #fffad3 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fefcea 0%,#fffad3 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fefcea 0%,#fffad3 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#fffad3',GradientType=0 );
+}
+
 .card-image:hover {
   opacity: 0.6;
 }

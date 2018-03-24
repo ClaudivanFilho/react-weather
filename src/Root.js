@@ -9,12 +9,11 @@ export default class Root extends Component {
     const { store } = this.props;
     return (
       <Provider store={store}>
-        <BrowserRouter>
+        
           <div>
-            <Route exact path="/" component={ App }/>
+            <App />
             <DevTools />
           </div>
-        </BrowserRouter>
       </Provider>
     );
   }
