@@ -5,8 +5,8 @@ const graphqlHTTP = require('express-graphql');
 
 const app = express();
 
-const host = 'http://localhost';
-const port = process.env.npm_config_port ? process.env.npm_config_port : 3000;
+var http = require('http').Server(app);
+app.set('port', (process.env.PORT || 3000));
 
 if (process.env.NODE_ENV == 'development') {
   // === Development Mode ==============
@@ -39,10 +39,10 @@ app.get('*', (req, res) => {
   res.redirect('/');
 });
 
-app.listen(port, 'localhost', (err) => {
+http.listen(app.get('port'), function(err) {
   if (err) {
     console.log(err);
     return;
   }
-  console.info('==> Listening on port %s. Open up %s:%s/ in your browser.', port, host, port);
+  console.log('Node app is running on port', app.get('port'));
 });
