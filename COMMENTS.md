@@ -83,13 +83,13 @@ Com os componentes feitos, precisei de algo para guardar o estado da minha aplic
   |-- Global.js // constantes globais como a url da api
 ```
 
-Com meus componentes deviadamente conectados a suas Stores e Actions, minha aplicação se encontrava praticaente pronta e entao fiz o deploy em produção utilizando a PaaS **Heroku**. Realizei o deploy antes dos testes, pois imaginei que me tomaria mais tempo, e caso fosse, optaria por não criar os testes.
+Com meus componentes deviadamente conectados a suas Stores e Actions, minha aplicação se encontrava praticamente pronta e então fiz o deploy em produção utilizando a PaaS **Heroku**. Realizei o deploy antes dos testes, pois imaginei que me tomaria mais tempo, e caso fosse, optaria por não criar os testes.
 
 Link da aplicação em produção ->  https://mapweather.herokuapp.com/forecast
 
 Finalizando o desenvolvimento, iniciei a criação de testes para os componentes e para isso utilizei a ferramenta [Jest](https://facebook.github.io/jest/). Por se tratar de uma ferramenta com uma grande compatibilidade com React, além de ser bem simples e eficiente. Os testes ficaram localizados no folder de cada componente e na raiz está localizado o folder __ __mocks__ __ com os mocks necessários para os testes.
 
-> Comandos uteis
+> Comandos Úteis
 
 ``` 
   npm install // instala todas as dependências do sistema
