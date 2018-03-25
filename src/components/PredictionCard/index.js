@@ -15,7 +15,7 @@ export default class PredictionCard extends Component {
           </Moment>
         </h5>
         <div className="div-image col-sm-12">
-          { icon && <img src={`http://openweathermap.org/img/w/${icon}.png`} width={imageWidth || 50}/> }
+          { icon && <img src={`//openweathermap.org/img/w/${icon}.png`} width={imageWidth || 50}/> }
         </div>
         <div className="col-sm-12">
           <h5>
