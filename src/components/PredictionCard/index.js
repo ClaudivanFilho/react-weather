@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Moment from 'react-moment';
 import './index.scss';
@@ -29,4 +30,14 @@ export default class PredictionCard extends Component {
     );
   }
 }
+
+PredictionCard.propTypes = {
+  date: PropTypes.string, 
+  icon: PropTypes.string, 
+  temp: PropTypes.number, 
+  info: PropTypes.string, 
+  imageWidth: PropTypes.number
+}
+
+
 

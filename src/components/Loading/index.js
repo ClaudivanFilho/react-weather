@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import LoadingIcon from '../../images/sun_loader.gif'
 
@@ -19,4 +20,9 @@ export default class Loading extends Component {
     );
   }
 }
+
+Loading.propTypes = {
+  active: PropTypes.bool
+}
+
 

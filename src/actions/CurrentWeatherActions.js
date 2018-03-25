@@ -9,7 +9,8 @@ import { GRAPH_URI } from '../constants/Global';
 import { getOpenWeatherQuery } from '../graphql/queries';
 
 const apolloFetch = require('apollo-fetch').createApolloFetch({ uri: GRAPH_URI });
-const CURRENT_WEATHER_ATTRS = `lat, lon, temp, temp_min, temp_max, main, description, name, country, sunrise, sunset, humidity, icon, wind`;
+const CURRENT_WEATHER_ATTRS = `lat, lon, temp, temp_min, temp_max, main, description, 
+  name, country, sunrise, sunset, humidity, icon, wind`;
 
 export function fetch(city, lat, lon) {
   return dispatch => {
@@ -22,7 +23,6 @@ export function fetch(city, lat, lon) {
       query: query,
     }).then(res => {
       if (res.errors) {
-        console.log(res.errors)
         dispatch({type: END_FETCH_CURRENT_WEATHER});  
         return null;
       } else {

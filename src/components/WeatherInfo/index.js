@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 
 import CardImage from '../CardImage'
@@ -55,6 +56,12 @@ export class WeatherInfo extends Component {
       </CSSTransitionGroup>
     );
   }
+}
+
+WeatherInfo.propTypes = {
+  currentWeather: PropTypes.shape({
+    weather: PropTypes.object
+  })
 }
 
 const mapStateToProps = state => {

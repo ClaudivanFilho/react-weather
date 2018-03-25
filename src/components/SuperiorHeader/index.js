@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import CityInput from '../CityInput'
 
@@ -6,10 +7,6 @@ import './index.scss';
 
 export default class SuperiorHeader extends Component {
   
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="col-sm-12 app-pickup-form">
@@ -23,4 +20,12 @@ export default class SuperiorHeader extends Component {
     );
   }
 }
+
+SuperiorHeader.propTypes = {
+  weather: PropTypes.shape({
+    country: PropTypes.string, 
+    name: PropTypes.string
+  })
+}
+
 

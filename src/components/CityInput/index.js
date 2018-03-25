@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 
 import * as CurrentWeatherActions from '../../actions/CurrentWeatherActions';
@@ -52,5 +53,10 @@ const mapDispatchToProps = dispatch => {
     fetchForecast: cityName => dispatch(ForecastActions.fetch(cityName))
   };
 };
+
+CityInput.propTypes = {
+  fetchCurrentWeather: PropTypes.func,
+  fetchForecast: PropTypes.func
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(CityInput);

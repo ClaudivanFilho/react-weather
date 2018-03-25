@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
@@ -91,6 +92,15 @@ export class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  currentWeather: PropTypes.shape({
+    weather: PropTypes.object,
+    loading: PropTypes.bool
+  }),
+  fetchCurrentWeather: PropTypes.func,
+  fetchForecast: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return { currentWeather: state.currentWeather };

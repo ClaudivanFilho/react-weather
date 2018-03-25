@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './index.scss';
 
@@ -22,3 +23,10 @@ export default class CardImage extends Component {
   }
 }
 
+CardImage.propTypes = {
+  title: PropTypes.node, 
+  image: PropTypes.string, 
+  width: PropTypes.number, 
+  children: PropTypes.node, 
+  color: PropTypes.string
+}

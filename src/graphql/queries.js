@@ -1,19 +1,19 @@
 import { CURRENT_WEATHER_ARGS_SCHEMA } from './schemas';
 
-export function getOpenWeatherQuery(args, mainField, attrs) {
-  let argsQuery = '';
+export function getOpenWeatherQuery(args, mainField, fields) {
+  let queryArgs = '';
   let count = 0;
   for (let key in args) {
     var queryArg = getQueryArg(key, args[key], CURRENT_WEATHER_ARGS_SCHEMA);
-    if (argsQuery && queryArg) {
-      argsQuery += ', '
+    if (queryArgs && queryArg) {
+      queryArgs += ', '
     }
-    argsQuery += queryArg;
+    queryArgs += queryArg;
   }
-  argsQuery += ', units: "metric"'
+  queryArgs += ', units: "metric"'
   return `{ 
-    ${mainField}(${argsQuery}) { 
-      ${attrs}
+    ${mainField}(${queryArgs}) { 
+      ${fields}
     } 
   }`
 }

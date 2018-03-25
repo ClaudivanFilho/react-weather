@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 
 import { CSSTransitionGroup } from 'react-transition-group'
@@ -68,5 +69,12 @@ export class Forecast extends Component {
 const mapStateToProps = state => {
   return { forecast: state.forecast };
 };
+
+Forecast.propTypes = {
+  forecast: PropTypes.shape({
+    forecast: PropTypes.object,
+    loading: PropTypes.bool
+  })
+}
 
 export default connect(mapStateToProps, {})(Forecast);
