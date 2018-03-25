@@ -9,7 +9,7 @@ import {
 
 export default compose(
   withProps({
-    googleMapURL: "//maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "//maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key= AIzaSyBVW97cyuQWPWdokSsM36Ka0jCmXTqhoFs",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `300px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
