@@ -34,7 +34,7 @@ const sliderSettings = {
   }]
 };
 
-class Forecast extends Component {
+export class Forecast extends Component {
 
   render() {
     const {forecast} = this.props.forecast;
@@ -45,15 +45,18 @@ class Forecast extends Component {
             <div className="col-sm-12 ui horizontal divider">
               Forecast
             </div>
-            <Slider {...sliderSettings}>
-              {forecast.list.map((prediction) => {
-                return (
-                  <div key={prediction.date}>
-                    <PredictionCard prediction={prediction} />
-                  </div>
-                )
-              })}
-            </Slider>
+            {
+              forecast.list.length && 
+              <Slider {...sliderSettings}>
+                {forecast.list.map((prediction) => {
+                  return (
+                    <div key={prediction.date}>
+                      <PredictionCard {...prediction} />
+                    </div>
+                  )
+                })}
+              </Slider>
+            }
           </div>
         }
       </CSSTransitionGroup>

@@ -11,7 +11,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 import './index.scss';
 
-class WeatherInfo extends Component {
+export class WeatherInfo extends Component {
 
   render() {
     const { weather } = this.props.currentWeather;
@@ -26,9 +26,9 @@ class WeatherInfo extends Component {
             <div className="ui raised segment col-sm-12 col-md-6 col-lg-3 col-xl-4 float-left" style={{margin: "0px"}}>
               <div style={{width: '100%'}}><strong>Actual state: </strong> {weather.main}</div>
               <div style={{width: '100%'}}><strong>State Description: </strong> {weather.description}</div>
-              <strong>Temperature: </strong> {weather.temp}° <br/>
-              <strong>Temperature Min: </strong> {weather.temp_min}°<br/>
-              <strong>Temperature Max: </strong> {weather.temp_max}°<br/>
+              <strong>Temperature: </strong> {weather.temp}°C <br/>
+              <strong>Temperature Min: </strong> {weather.temp_min}°C<br/>
+              <strong>Temperature Max: </strong> {weather.temp_max}°C<br/>
               <img className="details-image" src={`//openweathermap.org/img/w/${weather.icon}.png`} width="70"/>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-3 col-xl-2 float-left">

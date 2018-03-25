@@ -9,7 +9,9 @@
     "start": "node server.js",
     "dev": "NODE_ENV=development node server.js",
     "prod": "NODE_ENV=production node server.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -21,12 +23,15 @@
     "autoprefixer": "^6.3.1",
     "babel-core": "^6.3.15",
     "babel-eslint": "^5.0.0-beta4",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.0.0",
     "cross-env": "^1.0.6",
     "css-loader": "^0.23.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-babel": "^3.0.0",
@@ -34,7 +39,9 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "html-webpack-plugin": "^2.24.1",
+    "jest": "^22.4.3",
     "node-sass": "^3.4.2",
+    "react-test-renderer": "^15.6.2",
     "redux-devtools": "^3.0.1",
     "redux-devtools-dock-monitor": "^1.0.1",
     "redux-devtools-log-monitor": "^1.0.2",
@@ -48,12 +55,15 @@
   },
   "dependencies": {
     "apollo-fetch": "^0.7.0",
+    "babel-preset-env": "^1.6.1",
     "compose": "^0.1.2",
+    "enzyme-to-json": "^3.3.3",
     "express-graphql": "^0.6.12",
     "file-loader": "^1.1.11",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "http": "0.0.0",
+    "identity-obj-proxy": "^3.0.0",
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14",
     "node-fetch": "^2.1.1",
@@ -68,7 +78,17 @@
     "react-slick": "^0.22.2",
     "react-transition-group": "^1.2.1",
     "redux": "^3.0.0",
+    "redux-mock-store": "^1.5.1",
     "redux-thunk": "^1.0.3",
     "underscore": "^1.8.3"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./test-setup.js"
+    ]
   }
 }

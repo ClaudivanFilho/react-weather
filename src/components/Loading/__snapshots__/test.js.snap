@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Loading Snapshot 1`] = `
+<div
+  className="col-sm-12 text-center loading"
+>
+  <img
+    src="test-file-stub"
+    width={100}
+  />
+</div>
+`;

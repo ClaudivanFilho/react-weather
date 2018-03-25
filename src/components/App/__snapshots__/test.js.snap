@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test App Component 1`] = `
+<BrowserRouter>
+  <div>
+    <SuperiorMenu />
+    <div
+      className="container"
+      style={
+        Object {
+          "marginTop": "50px",
+        }
+      }
+    >
+      <SuperiorHeader
+        weather={null}
+      />
+      <div
+        className="col-sm-12 float-left"
+      >
+        <withProps(withScriptjs(withGoogleMap(Component)))
+          fetchWeather={[Function]}
+          position={
+            Object {
+              "lat": -34.397,
+              "lng": 150.644,
+            }
+          }
+          zoom={7}
+        />
+      </div>
+      <CSSTransitionGroup
+        transitionAppear={false}
+        transitionEnter={true}
+        transitionEnterTimeout={300}
+        transitionLeave={true}
+        transitionLeaveTimeout={30}
+        transitionName="loading"
+      >
+        <Loading
+          active={false}
+        />
+      </CSSTransitionGroup>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        path="/forecast"
+      />
+    </div>
+  </div>
+</BrowserRouter>
+`;

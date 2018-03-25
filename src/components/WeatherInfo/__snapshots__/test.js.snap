@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test WeatherInfo Component 1`] = `
+<CSSTransitionGroup
+  transitionAppear={false}
+  transitionEnter={true}
+  transitionEnterTimeout={500}
+  transitionLeave={true}
+  transitionLeaveTimeout={200}
+  transitionName="card"
+>
+  <div
+    className="col-sm-12 float-left"
+  >
+    <div
+      className="col-sm-12 ui horizontal divider"
+    >
+      Current Weather Info
+    </div>
+    <div
+      className="ui raised segment col-sm-12 col-md-6 col-lg-3 col-xl-4 float-left"
+      style={
+        Object {
+          "margin": "0px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <strong>
+          Actual state: 
+        </strong>
+         
+        Clouds
+      </div>
+      <div
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <strong>
+          State Description: 
+        </strong>
+         
+        many clouds
+      </div>
+      <strong>
+        Temperature: 
+      </strong>
+       
+      30
+      °C 
+      <br />
+      <strong>
+        Temperature Min: 
+      </strong>
+       
+      29
+      °C
+      <br />
+      <strong>
+        Temperature Max: 
+      </strong>
+       
+      31
+      °C
+      <br />
+      <img
+        className="details-image"
+        src="//openweathermap.org/img/w/10n.png"
+        width="70"
+      />
+    </div>
+    <div
+      className="col-sm-12 col-md-6 col-lg-3 col-xl-2 float-left"
+    >
+      <CardImage
+        color="blue"
+        image="test-file-stub"
+        title="Wind"
+        width={50}
+      >
+        1
+         m/sec
+      </CardImage>
+    </div>
+    <div
+      className="col-sm-12 col-md-6 col-lg-3 float-left"
+    >
+      <CardImage
+        color="yellow"
+        image="test-file-stub"
+        title="Sunrise"
+        width={50}
+      >
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element="time"
+          filter={[Function]}
+          format="HH:mm:ss A"
+          fromNow={false}
+          interval={60000}
+          onChange={[Function]}
+          toNow={false}
+          unit={null}
+          unix={true}
+          utc={false}
+        >
+          123123123
+        </t>
+      </CardImage>
+    </div>
+    <div
+      className="col-sm-12 col-md-6 col-lg-3 float-left"
+    >
+      <CardImage
+        color="yellow"
+        image="test-file-stub"
+        title="Sunset"
+        width={50}
+      >
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element="time"
+          filter={[Function]}
+          format="HH:mm:ss A"
+          fromNow={false}
+          interval={60000}
+          onChange={[Function]}
+          toNow={false}
+          unit={null}
+          unix={true}
+          utc={false}
+        >
+          123123123
+        </t>
+      </CardImage>
+    </div>
+  </div>
+</CSSTransitionGroup>
+`;

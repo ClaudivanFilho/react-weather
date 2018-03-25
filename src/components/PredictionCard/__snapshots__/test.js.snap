@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test PredictionCard Snapshot 1`] = `
+<div
+  className="prediction-card"
+>
+  <h5>
+    <time
+      dateTime={"1974-03-01T23:53:40.000Z"}
+    >
+      01/Mar 20:53
+    </time>
+  </h5>
+  <div
+    className="div-image col-sm-12"
+  >
+    <span
+      style={
+        Object {
+          "color": "red",
+          "fontWeight": "bold",
+          "marginTop": "15px",
+          "opacity": 1,
+        }
+      }
+    >
+      °C
+    </span>
+    <img
+      src="//openweathermap.org/img/w/10n.png"
+      width={50}
+    />
+  </div>
+  <div
+    className="col-sm-12"
+  >
+    <h5>
+      Clouds
+    </h5>
+  </div>
+</div>
+`;

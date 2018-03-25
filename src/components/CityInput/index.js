@@ -10,7 +10,7 @@ import _ from "underscore";
 
 import './index.scss';
 
-class CityInput extends Component {
+export class CityInput extends Component {
   
   constructor(props) {
     super(props);

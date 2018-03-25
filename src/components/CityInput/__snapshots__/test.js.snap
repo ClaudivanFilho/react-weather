@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test CityInput Snapshot 1`] = `
+<div
+  className="ui form text-right"
+>
+  <div
+    className="inline fields float-right"
+  >
+    <label>
+       Move the marker to a location or type a city:  
+    </label>
+    <input
+      className="col-sm-4"
+      onChange={[Function]}
+      type="text"
+    />
+  </div>
+</div>
+`;

@@ -18,7 +18,7 @@ import { CSSTransitionGroup } from 'react-transition-group'
 
 import './index.scss'
 
-class App extends Component {
+export class App extends Component {
   
   constructor(props) {
     super(props);
@@ -30,15 +30,17 @@ class App extends Component {
   }
   
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      let lat = position.coords.latitude;
-      let lng =  position.coords.longitude;
-      this.setState({ position: { lat, lng} });
-      this.props.fetchCurrentWeather(null, lat, lng).then()
-      this.props.fetchForecast(null, lat, lng).then()
-    }, (err) => {
-      // console.log(err)
-    }, {timeout: 2000});
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lat = position.coords.latitude;
+        let lng =  position.coords.longitude;
+        this.setState({ position: { lat, lng} });
+        this.props.fetchCurrentWeather(null, lat, lng).then()
+        this.props.fetchForecast(null, lat, lng).then()
+      }, (err) => {
+        // console.log(err)
+      }, {timeout: 1000});
+    }
   }
 
   fetchWeather(lat, lng) {

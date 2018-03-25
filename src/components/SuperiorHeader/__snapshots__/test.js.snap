@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test SuperiorHeader Component 1`] = `
+<div
+  className="col-sm-12 app-pickup-form"
+>
+  <h2
+    className="float-left"
+  >
+    Campina Grande, Br
+  </h2>
+  <Connect(CityInput) />
+</div>
+`;
