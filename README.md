@@ -16,7 +16,7 @@
  npm run dev
 ```
 
-[Development Proccess](https://github.com/ClaudivanFilho/react-weather/blob/master/README.md)
+[Development Proccess](https://github.com/ClaudivanFilho/react-weather/blob/master/COMMENTS.md)
 
 [Demo](https://mapweather.herokuapp.com/)
 
