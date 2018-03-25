@@ -34,7 +34,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'index.html',
       filename: 'index.html',
-      title: 'Weather App',
+      title: 'Map Weather App',
       inject: 'body'
     }),
     /**
