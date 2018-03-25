@@ -1,6 +1,6 @@
 # Map Weather App
 
-#### Dependencies Versions
+#### Dependencies and Versions
 > React v15.6
 > Npm v5.6
 > Node v8.x
